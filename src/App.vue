@@ -1,17 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <MenuTest :dataSend="todoList" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MenuTest from "./components/MenuTest.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    MenuTest,
+  },
+  data() {
+    return {
+      todoList: ["ReactJS", "VueJS", "NodeJS"],
+    };
+  },
+};
 </script>
 
 <style>
