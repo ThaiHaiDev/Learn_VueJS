@@ -16,6 +16,8 @@
     <div v-for="(task, index) in dataSend" :key="index">
       <p v-on:click="() => { handleDemo(task) }">{{ task }}</p>
     </div>
+
+    <h1>{{ dauChamFormatPrice }}</h1>
   </div>
 </template>
 
@@ -31,11 +33,7 @@ export default {
         isShow: true,
         selected: true,
         testEvent: false,
-        todoList: [
-          'ReactJS',
-          'VueJS',
-          'NodeJS'
-        ]
+        money: 1000000
       }
     },
     // Chay dau tien khi load, giong useEffect, dung de call Api
@@ -52,6 +50,12 @@ export default {
       name: function(newValue, oldValue) {
         console.log('name change')
         console.log(newValue, oldValue)
+      }
+    },
+    computed: {
+      dauChamFormatPrice() {
+        // Giong kieu until, no se xu ly de hien thi chu khong lien quan trong data
+        return this.money.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
       }
     }
 };

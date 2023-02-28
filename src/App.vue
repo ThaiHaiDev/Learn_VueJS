@@ -1,14 +1,21 @@
 <template>
-  <MenuTest :dataSend="todoList" />
+  <div>
+    <MenuTest :dataSend="todoList" />
+    <hr />
+    <ListTask />
+  </div>
+
 </template>
 
 <script>
 import MenuTest from "./components/MenuTest.vue";
+import ListTask from "./components/ListTask.vue";
 
 export default {
   name: "App",
   components: {
     MenuTest,
+    ListTask
   },
   data() {
     return {
